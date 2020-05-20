@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+</head>
+<body>
+<h1>TEST DE MALADE !!!!!!!!!</h1>
+{% if licornesExistent == true %}
+<p>
+    Regardez! Un troupeau de {{ tailleDuTroupeau }} licornes.
+</p>
+<h2>Il faut les attraper et s'en occuper désormais!</h2>
+<p>
+    {{ licornesTools.construireEtable() }}
+</p>
+<p>
+    {{ licornesTools.nourrirLicorne() }}
+</p>
+</body>
+
+{% endif %}
+{% block body %}{% endblock %}
+{% block javascripts %}{% endblock %}
+</html>

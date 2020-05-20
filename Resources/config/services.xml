@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services
+        https://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="sheeptizent_licornes_bundle.licornes_tools"
+                 class="Sheeptizent\LicornesBundle\Resources\LicornesTools" public="false"/>
+        <service id="sheeptizent_licornes_bundle.tools"
+                 alias="sheeptizent_licornes_bundle.licornes_tools" public="false"/>
+
+        <service id="sheeptizent_licornes_bundle.home"
+                 class="Sheeptizent\LicornesBundle\Controller\HomeController" public="false">
+            <tag name="controller.service_arguments"/>
+            <argument type="service" id="twig"/>
+            <argument type="service" id="sheeptizent_licornes_bundle.tools"/>
+        </service>
+        <service id="Sheeptizent\LicornesBundle\Controller\HomeController"
+                 alias="sheeptizent_licornes_bundle.home" public="true">
+        </service>
+    </services>
+</container>
