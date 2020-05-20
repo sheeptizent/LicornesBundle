@@ -6,19 +6,19 @@
 
 namespace Sheeptizent\LicornesBundle;
 
-use Sheeptizent\LicornesBundle\DependencyInjection\SheeptizentLicornesBundleExtension;
+use Sheeptizent\LicornesBundle\DependencyInjection\SheeptizentLicornesExtension;
 use Sheeptizent\LicornesBundle\DependencyInjection\CompilerPass\HomeControllerCompilerPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class SheeptizentLicornesBundleBundle extends Bundle
+class SheeptizentLicornesBundle extends Bundle
 {
     /**
-     * @return bool|SheeptizentLicornesBundleExtension|\Symfony\Component\DependencyInjection\Extension\ExtensionInterface|null
+     * @return SheeptizentLicornesExtension
      */
     public function getContainerExtension()
     {
-        return new SheeptizentLicornesBundleExtension();
+        return new SheeptizentLicornesExtension();
     }
 
     /**

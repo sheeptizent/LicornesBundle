@@ -21,7 +21,7 @@ class HomeControllerCompilerPass implements CompilerPassInterface
     {
         if ($container->hasParameter('twig.form.resources')) {
             $resources = $container->getParameter('twig.form.resources') ?: [];
-            array_unshift($resources, '@SheeptizentLicornesBundle/form.html.twig');
+            array_unshift($resources, '@LicornesBundle/form.html.twig');
             $container->setParameter('twig.form.resources', $resources);
         }
     }

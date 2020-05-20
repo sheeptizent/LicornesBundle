@@ -1,0 +1,24 @@
+{
+    "name": "sheeptizent/licornes-bundle",
+    "version": "1.0.0",
+    "type": "symfony-bundle",
+    "description": "Catch and care for unicorns if you believe it",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "sheeptizent",
+            "email": "jeremie.cohou@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.1.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sheeptizent\\LicornesBundle\\": "src/"
+        },
+        "exclude-from-classmap": [
+            "/tests/"
+        ]
+    }
+}

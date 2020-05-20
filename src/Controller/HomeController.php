@@ -16,6 +16,10 @@ use Twig\Environment;
 class HomeController
 {
     /**
+     * @var string
+     */
+    public $salutation;
+    /**
      * @var Environment
      */
     private $licornesTools;
@@ -28,17 +32,11 @@ class HomeController
      */
     private $tailleDuTroupeau;
 
-    /**
-     * @var string
-     */
-    public $salutation;
-
     public function __construct(
         Environment $twig,
         LicornesToolsInterface $licornesTools,
         $licornesExistent = true,
-        int $tailleDuTroupeau
-        = 5
+        int $tailleDuTroupeau = 5
     ) {
         $this->twig = $twig;
         $this->licornesTools = $licornesTools;
@@ -49,7 +47,7 @@ class HomeController
     public function index()
     {
         $this->licornesTools->setTailleDuTroupeau($this->tailleDuTroupeau);
-        $content = $this->twig->render('@SheeptizentLicornesBundle/base.html.twig',
+        $content = $this->twig->render('@SheeptizentLicornes/base.html.twig',
             [
                 'licornesTools' => $this->licornesTools,
                 'licornesExistent' => $this->licornesExistent,
@@ -59,7 +57,8 @@ class HomeController
         return new Response($content);
     }
 
-    public function salutationCachee(string $arg){
+    public function salutationCachee(string $arg)
+    {
         $this->salutation = $arg;
     }
 }

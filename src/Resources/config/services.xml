@@ -5,19 +5,19 @@
         https://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
-        <service id="sheeptizent_licornes_bundle.licornes_tools"
+        <service id="sheeptizent_licornes.licornes_tools"
                  class="Sheeptizent\LicornesBundle\Resources\LicornesTools" public="false"/>
-        <service id="sheeptizent_licornes_bundle.tools"
-                 alias="sheeptizent_licornes_bundle.licornes_tools" public="false"/>
+        <service id="sheeptizent_licornes.tools"
+                 alias="sheeptizent_licornes.licornes_tools" public="false"/>
 
-        <service id="sheeptizent_licornes_bundle.home"
+        <service id="sheeptizent_licornes.home"
                  class="Sheeptizent\LicornesBundle\Controller\HomeController" public="false">
             <tag name="controller.service_arguments"/>
             <argument type="service" id="twig"/>
-            <argument type="service" id="sheeptizent_licornes_bundle.tools"/>
+            <argument type="service" id="sheeptizent_licornes.tools"/>
         </service>
         <service id="Sheeptizent\LicornesBundle\Controller\HomeController"
-                 alias="sheeptizent_licornes_bundle.home" public="true">
+                 alias="sheeptizent_licornes.home" public="true">
         </service>
     </services>
 </container>

@@ -1,9 +1,9 @@
-sheeptizent_licornes_bundle:
+licornes_bundle:
     path: /
     controller: Sheeptizent\LicornesBundle\Controller\HomeController::index
     methods: GET
 
-sheeptizent_licornes_bundle_test:
-    path: /pltest
+licornes_bundle_test:
+    path: /test
     controller: Sheeptizent\LicornesBundle\Controller\TestController::index
     methods: GET

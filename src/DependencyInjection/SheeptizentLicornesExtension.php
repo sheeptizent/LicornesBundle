@@ -10,14 +10,14 @@ use Symfony\Component\Config\Definition\Processor;
 use function array_merge;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\DependencyInjection\Extension\Extension;
+use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 use Symfony\Component\DependencyInjection\Reference;
 
 /**
  * Class SheeptizentExchangePlatformExtension.
  */
-class SheeptizentLicornesBundleExtension extends Extension
+class SheeptizentLicornesExtension extends Extension
 {
     public function load(array $configs, ContainerBuilder $container)
     {
@@ -34,13 +34,13 @@ class SheeptizentLicornesBundleExtension extends Extension
         $config = $processor->processConfiguration($configuration, $configs);
 
         /*And merge it with the other argument provide in the service.xml file*/
-        $definition = $container->getDefinition('sheeptizent_licornes_bundle.home');
+        $definition = $container->getDefinition('sheeptizent_licornes.home');
         if (null !== $config['licornesTools']) {
             /*new Reference("Namespace/dir/ClassName) allow to instanciate an object of type
             ClassName - Symfony*/
             /*Way of when the licornes argument is not an alias*/
        //  $definition->replaceArgument(1, new Reference($config['licornesTools']));
-            $container->setAlias('sheeptizent_exchange_platform.tools', $config['licornesTools']);
+            $container->setAlias('sheeptizent_licornes.tools', $config['licornesTools']);
         }
         $args = $definition->getArguments();
 

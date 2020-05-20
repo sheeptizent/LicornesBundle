@@ -14,7 +14,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         /*Build a tree with a root node which name provided as parameter*/
-        $Tree = new TreeBuilder('sheeptizent_licornes_bundle');
+        $Tree = new TreeBuilder('sheeptizent_licornes');
 
         $root = $Tree->getRootNode()
             ->children()
